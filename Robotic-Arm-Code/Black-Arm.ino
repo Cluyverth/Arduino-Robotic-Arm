@@ -21,11 +21,16 @@
 #define but2 9          //* set digital pin 9 as Button 2 pin
 //== END DEFINES
 
-//== OBJECTS AND FUNCITONES CREATORS
+//== OBJECTS AND FUNCITONES
 Servo serv1, serv2, serv3, serv4;        //* create the object serv1, serv2, serv3, and serv4
 int motor1,motor2,motor3,motor4;         //* create motor1, motor1, motor3, and motor4 variable
 SoftwareSerial bluetoothSerial (10, 11); //* create a bluetooth serial (RX: 10, TX: 11)
-//== END OBJECTS AND FUNCITONES CREATORS
+void printMonitor();
+void movementOfButt1();
+void movementOfButt2();
+void movementOfBluetoothButt1();
+void movementOfBluetoothButt2();
+//== END OBJECTS AND FUNCITONES
 
 //== SETUP
 void setup() {
@@ -73,12 +78,14 @@ void loop() {
         //== BUTTONS LOGIC
         if(Butt == LOW){                    //* See if the button is pressed
             digitalWrite(pinLED2, HIGH);    //* turn on the LED light to indicate the beginning of the movement of the arm
+            movementOfButt1();
             delay(1000);
             digitalWrite(pinLED2, LOW);     //* turn off the LED light to indicate the end of the movement of the arm
             delay(100);   
         }
         if(Butt2 == LOW){                   //* See if the button is pressed
             digitalWrite(pinLED2, HIGH);    //* turn on the LED light to indicate the beginning of the movement of the arm
+            movementOfButt2();
             delay(1000);
             digitalWrite(pinLED2, LOW);     //* turn off the LED light to indicate the end of the movement of the arm
             delay(100);   
@@ -90,12 +97,14 @@ void loop() {
             int byteReceived = bluetoothSerial.read(); //* bluetooth read from serial
                 if(byteReceived = 1){    
                     digitalWrite(pinLED2, HIGH);       //* turn on the LED light to indicate the beginning of the movement of the arm
+                    movementOfBluetoothButt1();
                     delay(1000);
                     digitalWrite(pinLED2, LOW);        //* turn off the LED light to indicate the end of the movement of the arm
                     delay(100); 
                 }
                 if(byteReceived = 2){    
                     digitalWrite(pinLED2, HIGH);       //* turn on the LED light to indicate the beginning of the movement of the arm
+                    movementOfBluetoothButt2();
                     delay(1000);
                     digitalWrite(pinLED2, LOW);        //* turn off the LED light to indicate the end of the movement of the arm
                     delay(100); 
@@ -108,5 +117,23 @@ void loop() {
 //== END LOOP
 
 //== AUXILIARIES FUNCTION
+void printMonitor(){             //* Print monitor function
+    Serial.println("===================");
+    Serial.println(analogRead(pinLDR));
+  }
 
+void movementOfButt1(){          //! Configure the movement of the Button 1
+}
+
+void movementOfButt2(){          //! Configure the movement of the Button 2
+
+}
+
+void movementOfBluetoothButt1(){ //! Configure the movement of the Bluetooh Button 1
+
+}
+
+void movementOfBluetoothButt2(){ //! Configure the movement of the Bluetooh Button 2
+
+}
 //== END AUXILIARIES FUNCTION

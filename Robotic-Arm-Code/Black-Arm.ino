@@ -21,9 +21,22 @@
 #define but2 9 //* set digital pin 9 as Button 2 pin
 //== END DEFINES
 
+//== OBJECTS AND FUNCITONES CREATORS
+Servo serv1, serv2, serv3, serv4; //* create the object serv1, serv2, serv3, and serv4
+int motor1,motor2,motor3,motor4; //* create motor1, motor1, motor3, and motor4 variable
+//== END OBJECTS AND FUNCITONES CREATORS
+
 //== SETUP
 void setup() {
-
+    Serial.begin(9600); //* start the serial
+    pinMode(pinLED, OUTPUT); //* set pinLED as digital output
+    pinMode(pinLED2, OUTPUT); //* set pinLED2 as digital output
+    pinMode(butt,INPUT_PULLUP); //* sets button 1 pin as input with pullup resistor
+    pinMode(but2,INPUT_PULLUP); //* sets button 2 pin as input with pullup resistor
+    serv1.attach(pinServ1); //* assign object serv1 to pinserv1
+    serv2.attach(pinServ2); //* assign object serv2 to pinserv2
+    serv3.attach(pinServ3); //* assign object serv3 to pinserv3
+    serv4.attach(pinServ4); //* assign object serv4 to pinserv4
 }
 //== END SETUP
 

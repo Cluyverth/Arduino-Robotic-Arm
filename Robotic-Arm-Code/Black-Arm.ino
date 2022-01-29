@@ -42,6 +42,18 @@ void setup() {
 
 //== LOOP BEGINNING
 void loop() { 
+//== LOOP VARIABLES
+    int ldrValue = analogRead(pinLDR);
+// ldrValue = map(ldrValue,0,1023,0,255); //! if you want convert from analog to digital
+//== END LOOP VARIABLES
+
+//== LIGHT SENSOR LOGIC
+    if(ldrValue > lightLevel){
+        digitalWrite(pinLED, HIGH); //? turns on the LED to indicate that the sensor has seen the new cargo truck
+        delay(1000);
+        digitalWrite(pinLED, LOW);
+    }
+//== END OF LIGHT SENSOR LOGIC
 
 }
 //== END LOOP

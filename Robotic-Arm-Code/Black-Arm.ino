@@ -21,7 +21,7 @@
 #define but2 9          //* set digital pin 9 as Button 2 pin
 //== END DEFINES
 
-//== OBJECTS AND FUNCTIONS
+//== OBJECTS AND FUNCTIONS DECLARATIONS
 Servo serv1, serv2, serv3, serv4;        //* create the object serv1, serv2, serv3, and serv4
 int motor1,motor2,motor3,motor4;         //* create motor1, motor1, motor3, and motor4 variable
 SoftwareSerial bluetoothSerial (10, 11); //* create a bluetooth serial (RX: 10, TX: 11)
@@ -30,7 +30,7 @@ void movementOfButt1();
 void movementOfButt2();
 void movementOfBluetoothButt1();
 void movementOfBluetoothButt2();
-//== END OBJECTS AND FUNCITONES
+//== END OBJECTS AND FUNCITONS DECLARATIONS
 
 //== SETUP
 void setup() {

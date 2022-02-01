@@ -21,7 +21,7 @@
 #define but2 9          //* set digital pin 9 as Button 2 pin
 //== END DEFINES
 
-//== OBJECTS AND FUNCITONES
+//== OBJECTS AND FUNCTIONS
 Servo serv1, serv2, serv3, serv4;        //* create the object serv1, serv2, serv3, and serv4
 int motor1,motor2,motor3,motor4;         //* create motor1, motor1, motor3, and motor4 variable
 SoftwareSerial bluetoothSerial (10, 11); //* create a bluetooth serial (RX: 10, TX: 11)
@@ -116,7 +116,7 @@ void loop() {
 }
 //== END LOOP
 
-//== AUXILIARIES FUNCTION
+//== AUXILIARIES FUNCTIONS
 void printMonitor(){             //* Print monitor function
     Serial.println("===================");
     Serial.println(analogRead(pinLDR));
@@ -136,4 +136,4 @@ void movementOfBluetoothButt1(){ //! Configure the movement of the Bluetooh Butt
 void movementOfBluetoothButt2(){ //! Configure the movement of the Bluetooh Button 2
 
 }
-//== END AUXILIARIES FUNCTION
+//== END AUXILIARIES FUNCTIONS

@@ -1,7 +1,7 @@
 //== INCLUDES
 #include <Servo.h>          //* include the library Servo
 #include <SoftwareSerial.h> //* include the library SoftwareSerial
-#include <Arduino.h>        //! if you use Arduino IDE you don't need to include this
+
 //== END INCLUDES
 
 //== DEFINES
@@ -18,7 +18,7 @@
 #define pinLED 3        //* set digital pin 3 as LED 1 pin
 #define pinLED2 2       //* set digital pin 2 as LED 2 pin
 #define butt 8          //* set digital pin 8 as Button 1 pin
-#define but2 9          //* set digital pin 9 as Button 2 pin
+#define butt2 9          //* set digital pin 9 as Button 2 pin
 //== END DEFINES
 
 //== OBJECTS AND FUNCTIONS DECLARATIONS
@@ -39,7 +39,7 @@ void setup() {
     pinMode(pinLED, OUTPUT);        //* set pinLED as digital output
     pinMode(pinLED2, OUTPUT);       //* set pinLED2 as digital output
     pinMode(butt,INPUT_PULLUP);     //* sets button 1 pin as input with pullup resistor
-    pinMode(but2,INPUT_PULLUP);     //* sets button 2 pin as input with pullup resistor
+    pinMode(butt2,INPUT_PULLUP);     //* sets button 2 pin as input with pullup resistor
     serv1.attach(pinServ1);         //* assign object serv1 to pinserv1
     serv2.attach(pinServ2);         //* assign object serv2 to pinserv2
     serv3.attach(pinServ3);         //* assign object serv3 to pinserv3
@@ -123,17 +123,43 @@ void printMonitor(){             //* Print monitor function
   }
 
 void movementOfButt1(){          //! Configure the movement of the Button 1
+
+  for(int angleServo = 0; angleServo < 180; angleServo++){ //! configure the moviment
+    serv1.write(angleServo);
+    serv2.write(angleServo);
+    serv3.write(angleServo);
+    serv4.write(angleServo);
+    delay(20);
+  }
 }
 
 void movementOfButt2(){          //! Configure the movement of the Button 2
-
+  for(int angleServo = 0; angleServo < 180; angleServo++){ //! configure the moviment
+    serv1.write(angleServo);
+    serv2.write(angleServo);
+    serv3.write(angleServo);
+    serv4.write(angleServo);
+    delay(20);
+  }
 }
 
 void movementOfBluetoothButt1(){ //! Configure the movement of the Bluetooh Button 1
-
+  for(int angleServo = 0; angleServo < 180; angleServo++){ //! configure the moviment
+    serv1.write(angleServo);
+    serv2.write(angleServo);
+    serv3.write(angleServo);
+    serv4.write(angleServo);
+    delay(20);
+  }
 }
 
 void movementOfBluetoothButt2(){ //! Configure the movement of the Bluetooh Button 2
-
+  for(int angleServo = 0; angleServo < 180; angleServo++){ //! configure the moviment
+    serv1.write(angleServo);
+    serv2.write(angleServo);
+    serv3.write(angleServo);
+    serv4.write(angleServo);
+    delay(20);
+  }
 }
 //== END AUXILIARIES FUNCTIONS

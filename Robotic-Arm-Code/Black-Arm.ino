@@ -1,6 +1,7 @@
 //== INCLUDES
 #include <Servo.h>          //* include the library Servo
 #include <SoftwareSerial.h> //* include the library SoftwareSerial
+#include <Arduino.h>        //* include the library Arduino
 
 //== END INCLUDES
 
@@ -30,7 +31,7 @@ void movementOfButt1();
 void movementOfButt2();
 void movementOfBluetoothButt1();
 void movementOfBluetoothButt2();
-//== END OBJECTS AND FUNCITONS DECLARATIONS
+//== END OBJECTS AND FUNCTIONS DECLARATIONS
 
 //== SETUP
 void setup() {
